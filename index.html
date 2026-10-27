@@ -1,1 +1,555 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasir Soufi Hdidou | Full-Stack Developer & AI Builder</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        bgDark: '#07090e',
+                        cardDark: '#0f1420',
+                        neonCyan: '#00f2fe',
+                        electricBlue: '#4facfe',
+                        neonPurple: '#a855f7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #07090e;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        /* Fondos y efectos de brillo */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        .glass {
+            background: rgba(15, 20, 32, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: linear-gradient(145deg, rgba(18, 24, 38, 0.8), rgba(10, 14, 23, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.15), 0 0 15px -5px rgba(168, 85, 247, 0.2);
+            transform: translateY(-4px);
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #00f2fe 0%, #4facfe 50%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: -1;
+            opacity: 0.25;
+        }
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #07090e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f2fe;
+        }
+    </style>
+</head>
+<body class="bg-grid relative selection:bg-cyan-500 selection:text-black">
 
+    <!-- Efectos de luz de fondo -->
+    <div class="glow-blob w-96 h-96 bg-cyan-500 top-[-100px] left-[-100px]"></div>
+    <div class="glow-blob w-[500px] h-[500px] bg-purple-600 top-[30%] right-[-150px]"></div>
+    <div class="glow-blob w-96 h-96 bg-blue-600 bottom-[10%] left-[10%]"></div>
+
+    <!-- Barra de Navegación -->
+    <header class="fixed top-0 w-full z-50 glass border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-mono font-bold text-lg tracking-wider flex items-center gap-2">
+                <span class="text-cyan-400">&lt;</span>Yasir<span class="text-purple-400">/&gt;</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#sobre-mi" class="hover:text-cyan-400 transition-colors">Sobre mí</a>
+                <a href="#proyectos" class="hover:text-cyan-400 transition-colors">Proyectos</a>
+                <a href="#stack" class="hover:text-cyan-400 transition-colors">Stack</a>
+                <a href="#trayectoria" class="hover:text-cyan-400 transition-colors">Trayectoria</a>
+            </nav>
+            <a href="#contacto" class="px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/40 text-cyan-300 hover:border-cyan-400 hover:bg-cyan-400/10 transition-all">
+                Contactar
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-6 pt-32 pb-20">
+
+        <!-- HERO SECTION -->
+        <section class="min-h-[75vh] flex flex-col justify-center items-start">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-6">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                Disponible para proyectos & desarrollo de software
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6">
+                Hola, soy <span class="text-gradient">Yasir Soufi</span>.<br>
+                <span class="text-slate-200 text-3xl sm:text-5xl md:text-6xl font-bold">Full-Stack Dev & AI Builder.</span>
+            </h1>
+
+            <p class="text-slate-400 text-lg sm:text-xl max-w-2xl leading-relaxed mb-8">
+                Transformo ideas complejas en aplicaciones SaaS, herramientas de automatización con Inteligencia Artificial y soluciones multiplataforma. Enfocado en la arquitectura limpia, la eficiencia y el impacto real en negocio.
+            </p>
+
+            <div class="flex flex-wrap gap-4 mb-12">
+                <a href="#proyectos" class="px-6 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-slate-950 hover:opacity-95 transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/20">
+                    Ver Proyectos <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#trayectoria" class="px-6 py-3.5 rounded-xl font-semibold text-sm glass text-slate-200 hover:border-slate-500 transition-all flex items-center gap-2">
+                    <i data-lucide="terminal" class="w-4 h-4 text-cyan-400"></i> Mi Trayectoria
+                </a>
+            </div>
+
+            <!-- Quick Stats / Badges -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full pt-8 border-t border-white/10">
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-lg bg-cyan-500/10 text-cyan-400">
+                        <i data-lucide="cpu" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-mono">Especialidad</p>
+                        <p class="text-sm font-semibold text-slate-200">SaaS & Agentes IA</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-lg bg-purple-500/10 text-purple-400">
+                        <i data-lucide="code-2" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-mono">Formación actual</p>
+                        <p class="text-sm font-semibold text-slate-200">CFGS DAM</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-lg bg-blue-500/10 text-blue-400">
+                        <i data-lucide="server" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-mono">Infraestructura</p>
+                        <p class="text-sm font-semibold text-slate-200">Cloud & Self-Hosted</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400">
+                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-mono">Ubicación</p>
+                        <p class="text-sm font-semibold text-slate-200">Sevilla, España</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE MÍ / FILOSOFÍA -->
+        <section id="sobre-mi" class="py-20 border-t border-white/5">
+            <div class="flex items-center gap-3 mb-3">
+                <span class="font-mono text-cyan-400 text-sm">01.</span>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Sobre mí & Mentalidad</h2>
+                <div class="h-[1px] bg-white/10 flex-grow ml-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mt-10">
+                <div class="md:col-span-2 glass-card p-8 rounded-2xl space-y-4 text-slate-300 leading-relaxed">
+                    <p>
+                        Soy un desarrollador apasionado por construir sistemas que funcionan en el mundo real. Con una base sólida en <strong>Sistemas Microinformáticos y Redes (SMR)</strong> y actualmente especializándome en el <strong>Desarrollo de Aplicaciones Multiplataforma (DAM)</strong>, combino el conocimiento de infraestructura de bajo nivel (Linux, virtualización en Proxmox, redes) con el desarrollo de software moderno.
+                    </p>
+                    <p>
+                        Mi enfoque de desarrollo integra flujos de trabajo asistidos por IA y arquitecturas escalables (Next.js, TypeScript, Python, C#, Java) para pasar del concepto al despliegue en tiempo récord. Me apasiona la creación de <strong>micro-SaaS</strong>, la automatización de procesos empresariales y el análisis cuantitativo/psicológico aplicado a los mercados financieros.
+                    </p>
+                    <p>
+                        Fuera del código, creo firmemente en los sistemas de productividad, la disciplina diaria, el entrenamiento de fuerza y la mejora continua como pilares para rendir al máximo nivel técnico y personal.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                            <i data-lucide="zap" class="w-5 h-5 text-cyan-400"></i> Puntos Fuertes
+                        </h3>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                                <span><strong>Arquitectura Full-Stack:</strong> Desde el diseño UI/UX hasta bases de datos SQL/NoSQL.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-400 shrink-0 mt-0.5"></i>
+                                <span><strong>Integración de IA:</strong> Agentes autónomos, extracción documental (OCR/LLM) y APIs generativas.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
+                                <span><strong>SysAdmin & DevOps:</strong> Entornos Linux, contenedores Docker, Proxmox y despliegues en la nube.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                                <span><strong>Visión de Producto:</strong> Enfoque orientado a resolver problemas de negocio y optimizar tiempos.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-slate-400">
+                        <span>Idiomas: ES (Nativo) / EN (B1 Trinity)</span>
+                        <span class="text-cyan-400">Permiso B</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS DESTACADOS -->
+        <section id="proyectos" class="py-20 border-t border-white/5">
+            <div class="flex items-center gap-3 mb-10">
+                <span class="font-mono text-cyan-400 text-sm">02.</span>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Proyectos Destacados</h2>
+                <div class="h-[1px] bg-white/10 flex-grow ml-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Proyecto 1: NeuroStrat -->
+                <div class="glass-card rounded-2xl p-7 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition-all"></div>
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+                                <i data-lucide="line-chart" class="w-6 h-6"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
+                                SaaS / FinTech AI
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+                            NeuroStrat (neurostrat.app)
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Plataforma SaaS de diario de trading potenciada por Inteligencia Artificial. Analiza el rendimiento operativo (Forex, XAUUSD, Crypto), detecta patrones de comportamiento y sesgos psicológicos, y genera planes de mejora personalizados mediante la API de Gemini.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="px-2.5 py-1 rounded bg-white/5">Next.js</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">TypeScript</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">Tailwind CSS</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">Supabase</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">Gemini API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: QdocumentAI -->
+                <div class="glass-card rounded-2xl p-7 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/20 transition-all"></div>
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400">
+                                <i data-lucide="file-scan" class="w-6 h-6"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-purple-500/10 text-purple-300 border border-purple-500/30">
+                                ERP / Automatización IA
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                            QdocumentAI (Extractor de Albaranes)
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Herramienta de escritorio y web para la extracción inteligente de datos de albaranes y facturas mediante IA, automatizando su validación e inserción directa en bases de datos ERP corporativas. Diseñado para eliminar la entrada manual de datos.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="px-2.5 py-1 rounded bg-white/5">Python</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">C#</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">SQL Server</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">AI Vision / OCR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: Markethink -->
+                <div class="glass-card rounded-2xl p-7 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all"></div>
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
+                                <i data-lucide="bot" class="w-6 h-6"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-300 border border-blue-500/30">
+                                Agente IA Autónomo
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                            Markethink & Agente "Claudio"
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Sistema automatizado de marketing impulsado por un agente autónomo desplegado sobre OpenClaw en un entorno Ubuntu VM. Conectado en tiempo real con Telegram, Google Drive, Supabase y un dashboard web moderno para gestionar campañas y contenido.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="px-2.5 py-1 rounded bg-white/5">OpenClaw</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">Ubuntu Server</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">Telegram API</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">Supabase</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">Vercel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4: Web Design & Ticketing Automation -->
+                <div class="glass-card rounded-2xl p-7 flex flex-col justify-between relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                                <i data-lucide="workflow" class="w-6 h-6"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-xs font-mono bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
+                                B2B & Automatización
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                            Sistemas de Ticketing & Soluciones B2B
+                        </h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Desarrollo de sistemas internos de gestión de incidencias (Ticketing) automatizados mediante Google Apps Script y hojas de cálculo, además de diseño y despliegue de landing pages de alta conversión para negocios locales en Andalucía.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="px-2.5 py-1 rounded bg-white/5">Google Apps Script</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">React / HTML / CSS</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">Tailwind</span>
+                            <span class="px-2.5 py-1 rounded bg-white/5">Automatización</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- STACK TECNOLÓGICO -->
+        <section id="stack" class="py-20 border-t border-white/5">
+            <div class="flex items-center gap-3 mb-10">
+                <span class="font-mono text-cyan-400 text-sm">03.</span>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Stack Tecnológico</h2>
+                <div class="h-[1px] bg-white/10 flex-grow ml-4"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Lenguajes -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4 text-cyan-400">
+                        <i data-lucide="terminal-square" class="w-5 h-5"></i>
+                        <h3 class="font-bold text-white">Lenguajes</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Java</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">TypeScript</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">JavaScript</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Python</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">C#</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">C++</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">SQL</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Bash</span>
+                    </div>
+                </div>
+
+                <!-- Frontend & Mobile -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4 text-purple-400">
+                        <i data-lucide="layout" class="w-5 h-5"></i>
+                        <h3 class="font-bold text-white">Frontend & Mobile</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">React</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Next.js</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Tailwind CSS</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Flutter</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Framer Motion</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">HTML5 / CSS3</span>
+                    </div>
+                </div>
+
+                <!-- Backend & Datos -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4 text-blue-400">
+                        <i data-lucide="database" class="w-5 h-5"></i>
+                        <h3 class="font-bold text-white">Backend & Datos</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Node.js</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Supabase</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">PostgreSQL</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">SQL Server</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Oracle DB</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Apps Script</span>
+                    </div>
+                </div>
+
+                <!-- Infraestructura & IA -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4 text-emerald-400">
+                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                        <h3 class="font-bold text-white">DevOps & IA</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Docker</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Proxmox VE</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Linux / Ubuntu</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Git & Vercel</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">Tailscale</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white/5 text-xs font-mono text-slate-200 border border-white/5">OpenClaw / AI SDKs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRAYECTORIA (EXPERIENCIA Y EDUCACIÓN) -->
+        <section id="trayectoria" class="py-20 border-t border-white/5">
+            <div class="flex items-center gap-3 mb-10">
+                <span class="font-mono text-cyan-400 text-sm">04.</span>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Experiencia & Educación</h2>
+                <div class="h-[1px] bg-white/10 flex-grow ml-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Columna Educación -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="graduation-cap" class="w-5 h-5 text-cyan-400"></i> Formación Académica
+                    </h3>
+                    <div class="space-y-6 border-l-2 border-white/10 pl-6 relative">
+                        
+                        <div class="relative">
+                            <span class="w-3 h-3 rounded-full bg-cyan-400 absolute -left-[31px] top-1.5 shadow-[0_0_10px_#00f2fe]"></span>
+                            <span class="text-xs font-mono text-cyan-400">Actualidad (2026 - Presente)</span>
+                            <h4 class="text-base font-bold text-white mt-1">CFGS en Desarrollo de Aplicaciones Multiplataforma (DAM)</h4>
+                            <p class="text-xs text-slate-400 mb-2">IES Francisco Rodríguez Marín · Osuna, Sevilla</p>
+                            <p class="text-sm text-slate-300">
+                                Especialización en programación orientada a objetos con Java, desarrollo de interfaces, bases de datos relacionales, arquitectura de software y aplicaciones móviles.
+                            </p>
+                        </div>
+
+                        <div class="relative">
+                            <span class="w-3 h-3 rounded-full bg-purple-400 absolute -left-[31px] top-1.5"></span>
+                            <span class="text-xs font-mono text-purple-400">Graduado en Junio 2026</span>
+                            <h4 class="text-base font-bold text-white mt-1">CFGM en Sistemas Microinformáticos y Redes (SMR)</h4>
+                            <p class="text-xs text-slate-400 mb-2">IES Herrera · Herrera, Sevilla</p>
+                            <p class="text-sm text-slate-300">
+                                Administración de sistemas operativos (Linux/Windows Server), configuración de redes locales, virtualización, seguridad informática y montaje/mantenimiento de equipos.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Columna Experiencia -->
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="briefcase" class="w-5 h-5 text-purple-400"></i> Experiencia Profesional
+                    </h3>
+                    <div class="space-y-6 border-l-2 border-white/10 pl-6 relative">
+
+                        <div class="relative">
+                            <span class="w-3 h-3 rounded-full bg-cyan-400 absolute -left-[31px] top-1.5 shadow-[0_0_10px_#00f2fe]"></span>
+                            <span class="text-xs font-mono text-cyan-400">2025 - Presente</span>
+                            <h4 class="text-base font-bold text-white mt-1">Desarrollador Full-Stack Independiente & AI Builder</h4>
+                            <p class="text-xs text-slate-400 mb-2">Proyectos Propios & Clientes B2B · Andalucía</p>
+                            <p class="text-sm text-slate-300">
+                                Creación de micro-SaaS (NeuroStrat), despliegue de agentes de IA en servidores propios y diseño de páginas web a medida para digitalizar negocios locales.
+                            </p>
+                        </div>
+
+                        <div class="relative">
+                            <span class="w-3 h-3 rounded-full bg-purple-400 absolute -left-[31px] top-1.5"></span>
+                            <span class="text-xs font-mono text-purple-400">Febrero 2026 - Abril 2026 (3 meses)</span>
+                            <h4 class="text-base font-bold text-white mt-1">Desarrollador de Software (Prácticas FCT)</h4>
+                            <p class="text-xs text-slate-400 mb-2">Redes y Componentes S.L. (Gabinete TIC) · Puente Genil, Córdoba</p>
+                            <p class="text-sm text-slate-300">
+                                Desarrollo de aplicaciones web, de escritorio y móviles. Creación de herramientas de extracción documental con IA integradas en sistemas ERP (Python, C#, SQL Server) y automatización de soporte técnico.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO / FOOTER -->
+        <section id="contacto" class="py-20 border-t border-white/5 text-center">
+            <div class="max-w-2xl mx-auto glass-card p-10 rounded-3xl relative overflow-hidden">
+                <div class="glow-blob w-64 h-64 bg-cyan-500 top-[-50px] left-[30%] opacity-20"></div>
+                <span class="font-mono text-cyan-400 text-xs uppercase tracking-widest">¿Hablamos?</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">
+                    Construyamos el próximo gran proyecto
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mb-8">
+                    Ya sea para colaborar en el desarrollo de una aplicación, implementar automatizaciones con IA en tu empresa o hablar sobre tecnología y software, mi bandeja de entrada está siempre abierta.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="mailto:contacto@neurostrat.app" class="px-6 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 hover:opacity-95 transition-all flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Enviar Correo
+                    </a>
+                    <a href="https://github.com" target="_blank" class="px-5 py-3.5 rounded-xl font-semibold text-sm glass hover:border-cyan-400/50 transition-all flex items-center gap-2">
+                        <i data-lucide="github" class="w-4 h-4 text-cyan-400"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="px-5 py-3.5 rounded-xl font-semibold text-sm glass hover:border-cyan-400/50 transition-all flex items-center gap-2">
+                        <i data-lucide="linkedin" class="w-4 h-4 text-blue-400"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-8 text-center text-xs font-mono text-slate-500">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>© 2026 Yasir Soufi Hdidou. Todos los derechos reservados.</p>
+            <p class="text-slate-400">Diseñado con <span class="text-cyan-400">Tailwind CSS</span> · Sevilla, España</p>
+        </div>
+    </footer>
+
+    <!-- Inicializar Iconos Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
